@@ -1,0 +1,12 @@
+{
+  "name": "heart-matrix-3d",
+  "version": "1.0.0",
+  "description": "Hiệu ứng mưa chữ hội tụ trái tim 3D neon trên HTML5 Canvas",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["canvas", "matrix", "heart", "3d", "animation"],
+  "author": "",
+  "license": "MIT"
+}

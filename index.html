@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tim cho má | Mưa Sao Trái Tim 3D</title>
+  <meta name="description"
+    content="Món quà bất ngờ - Hiệu ứng mưa sao và chữ hội tụ thành trái tim 3D phát sáng neon lãng mạn.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2.2">
+</head>
+
+<body>
+  <!-- Canvas Vũ Trụ Trái Tim 3D -->
+  <canvas id="matrixHeartCanvas"></canvas>
+
+  <!-- Lời đề từ lãng mạn phía trên (Người nhận nhìn thấy) -->
+  <header class="gift-header" id="giftHeader">
+    <div class="recipient-badge">
+      <span class="sparkle">✨</span>
+      <span id="recipientName">Mẹ hoa yêu quý hehe</span>
+      <span class="sparkle">✨</span>
+    </div>
+    <h1 class="gift-subtitle" id="giftSubtitle">Mỗi hạt sáng rơi xuống là lời chúc sức khỏe và bình an con gửi đến Má</h1>
+  </header>
+
+  <!-- Nút Bật/Tắt Âm Thanh Nhạc Hộp -->
+  <button id="musicToggleBtn" class="music-toggle-btn" aria-label="Bật/Tắt Nhạc" title="Bật/Tắt giai điệu hộp nhạc">
+    <span class="music-icon">🎵</span>
+    <span class="music-waves">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+
+  <!-- Nút Mở Bức Thư Yêu Thương (Floating Gift Action) -->
+  <button id="openLetterBtn" class="gift-floating-btn" aria-label="Mở thiệp chúc">
+    <span class="envelope-icon">💌</span>
+    <span class="btn-text">Mở bức thư bí mật</span>
+  </button>
+
+  <!-- Gợi ý tương tác chạm màn hình -->
+  <div id="tapHint" class="tap-hint">
+    <span class="hint-icon">💖</span>
+    <span>Chạm vào màn hình để gửi ngàn yêu thương</span>
+  </div>
+
+  <!-- Nút Bí Mật Mở Chế Độ Admin / Tùy Chỉnh (Góc dưới bên trái, cực kín đáo) -->
+  <div id="secretAdminTrigger" class="secret-trigger" title="Bấm 3 lần hoặc nhấn phím 'A' để mở bảng cài đặt bí mật">
+  </div>
+
+  <!-- ================= BẢNG CÀI ĐẶT BÍ MẬT DÀNH RIÊNG CHO BẠN (CREATOR ADMIN PANEL) ================= -->
+  <aside id="adminPanel" class="admin-panel hidden" aria-label="Bảng cài đặt của bạn">
+    <div class="admin-header">
+      <div class="admin-title">
+        <span class="admin-badge">ADMIN</span>
+        <h3>Tùy Chỉnh Món Quà (Chỉ Bạn Thấy)</h3>
+      </div>
+      <button id="closeAdminBtn" class="admin-close-btn" title="Đóng bảng cài đặt">&times;</button>
+    </div>
+
+    <div class="admin-body">
+      <!-- Chọn Nhanh Mẫu Quà Tặng (Quick Presets) -->
+      <div class="admin-group">
+        <label>Chọn nhanh mẫu quà tặng cho người thân:</label>
+        <div class="preset-buttons">
+          <button type="button" class="preset-btn active" data-preset="crush">💖 Người Yêu</button>
+          <button type="button" class="preset-btn" data-preset="mom">🌸 Mẹ Yêu</button>
+          <button type="button" class="preset-btn" data-preset="sister">🎀 Em Gái</button>
+        </div>
+      </div>
+
+      <!-- Tên người nhận & Người gửi -->
+      <div class="admin-form-row">
+        <div class="admin-group">
+          <label for="adminRecipientInput">Tên người nhận (Hiển thị đầu trang):</label>
+          <input type="text" id="adminRecipientInput" placeholder="Ví dụ: Bé Yêu, Mẹ Kính Yêu, Em Gái...">
+        </div>
+        <div class="admin-group">
+          <label for="adminSenderInput">Tên người gửi (Chữ ký bức thư):</label>
+          <input type="text" id="adminSenderInput" placeholder="Ví dụ: From Hoàng With Love ♥">
+        </div>
+      </div>
+
+      <!-- Dòng đề từ dưới tên -->
+      <div class="admin-group">
+        <label for="adminSubtitleInput">Dòng đề từ phụ:</label>
+        <input type="text" id="adminSubtitleInput" placeholder="Ví dụ: Mỗi hạt sáng rơi xuống là lời chúc bình an...">
+      </div>
+
+      <!-- Ký tự chữ rơi -->
+      <div class="admin-group">
+        <label for="adminCharsInput">Ký tự rơi & tạo trái tim:</label>
+        <input type="text" id="adminCharsInput" placeholder="Ví dụ: LOVE YOU FOREVER ♥ ANH YÊU EM 1314 520 ★">
+      </div>
+
+      <!-- Lời nhắn trong bức thư -->
+      <div class="admin-group">
+        <label for="adminLetterMsgInput">Nội dung bức thư:</label>
+        <textarea id="adminLetterMsgInput" rows="3" placeholder="Nhập lời chúc ngọt ngào của bạn..."></textarea>
+      </div>
+
+      <!-- Chọn tông màu Neon -->
+      <div class="admin-group">
+        <label>Tông màu sắc dịu mắt:</label>
+        <div class="admin-themes">
+          <button type="button" class="theme-pill active" data-theme="rosePink" style="--c: #ff2d65;">Hồng Đỏ</button>
+          <button type="button" class="theme-pill" data-theme="goldenWarm" style="--c: #ffb300;">Vàng Ấm</button>
+          <button type="button" class="theme-pill" data-theme="cyanCalm" style="--c: #00d2ff;">Xanh Dịu</button>
+          <button type="button" class="theme-pill" data-theme="violetSoft" style="--c: #c084fc;">Tím Dịu</button>
+        </div>
+      </div>
+
+      <!-- Tùy chỉnh hiệu năng mượt mà -->
+      <div class="admin-form-row">
+        <div class="admin-group">
+          <label for="adminParticleCount">Số lượng hạt: <span id="adminParticleCountVal">520</span></label>
+          <input type="range" id="adminParticleCount" min="300" max="850" step="20" value="520">
+        </div>
+        <div class="admin-group">
+          <label for="adminFallSpeed">Tốc độ rơi: <span id="adminFallSpeedVal">1.0x</span></label>
+          <input type="range" id="adminFallSpeed" min="0.5" max="2.0" step="0.1" value="1.0">
+        </div>
+      </div>
+
+      <!-- HỘP ĐIỀN LINK NGROK: TỰ ĐỘNG LƯU & TẠO 3 LINK SIÊU SẠCH -->
+      <div class="admin-group ngrok-card">
+        <label for="ngrokUrlInput" class="ngrok-label">
+          <span>🌐 <b>Điền link Ngrok (Tự động Lưu & Tạo Link Sạch):</b></span>
+          <span id="ngrokStatusBadge" class="ngrok-status">Chưa điền</span>
+        </label>
+        <div class="ngrok-input-wrap">
+          <input type="text" id="ngrokUrlInput" placeholder="Dán link ngrok (vd: https://abc-123.ngrok-free.app)">
+          <button type="button" id="applyNgrokBtn" class="btn-ngrok-save">💾 Lưu & Tạo Link</button>
+        </div>
+        <div id="ngrokLinksList" class="ngrok-links-list">
+          <div class="clean-link-item">
+            <span class="link-label">🌸 Gửi Má:</span>
+            <input type="text" readonly id="linkMe" class="clean-link-input" value="https://...">
+            <button type="button" class="btn-copy-clean" data-target="linkMe">Sao chép</button>
+          </div>
+          <div class="clean-link-item">
+            <span class="link-label">💖 Người Yêu:</span>
+            <input type="text" readonly id="linkCrush" class="clean-link-input" value="https://...">
+            <button type="button" class="btn-copy-clean" data-target="linkCrush">Sao chép</button>
+          </div>
+          <div class="clean-link-item">
+            <span class="link-label">🎀 Em Gái:</span>
+            <input type="text" readonly id="linkSister" class="clean-link-input" value="https://...">
+            <button type="button" class="btn-copy-clean" data-target="linkSister">Sao chép</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nút hành động Lưu & Tạo Link chia sẻ -->
+      <div class="admin-actions">
+        <div class="admin-sub-actions">
+          <button id="saveLocalBtn" class="btn-secondary">💾 Lưu cấu hình hiện tại</button>
+          <button id="testExplodeBtn" class="btn-secondary">💥 Thử nổ trái tim</button>
+        </div>
+      </div>
+
+      <!-- Thông báo sao chép thành công -->
+      <div id="copyAlert" class="copy-alert hidden">
+        Đã sao chép link tặng quà vào bộ nhớ tạm! Bạn chỉ cần gửi link này cho người ấy.
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal Bức Thư Tình Cảm (Glassmorphism Letter Card) -->
+  <div id="letterModal" class="letter-modal-backdrop" aria-hidden="true">
+    <div class="letter-card">
+      <button id="closeLetterBtn" class="close-card-btn" aria-label="Đóng thư">&times;</button>
+
+      <div class="letter-stamp">
+        <span>WITH LOVE</span>
+        <div class="stamp-heart">♥</div>
+      </div>
+
+      <div class="letter-content">
+        <h2 class="letter-title" id="letterRecipient">Gửi Em, Điều Tuyệt Vời Nhất! ✨</h2>
+
+        <p class="letter-message" id="letterMessage">
+          Cảm ơn vì đã xuất hiện và làm cho mỗi ngày trôi qua đều ngập tràn ấm áp và nụ cười.
+          Giữa hàng tỉ người trên hành tinh này, được gặp và đồng hành cùng em là điều may mắn nhất.
+          <br><br>
+          Mong rằng trái tim nhỏ lấp lánh này sẽ mang lại cho em một ngày thật vui vẻ, bình yên và luôn nở nụ cười trên
+          môi.
+          Yêu em nhiều hơn cả những vì sao trên bầu trời! 🌸💖
+        </p>
+
+        <div class="letter-signature">
+          <p class="sig-from">Mãi bên em,</p>
+          <p class="sig-name" id="senderName">From Me With All My Heart ♥</p>
+        </div>
+
+        <button id="closeLetterActionBtn" class="letter-confirm-btn">
+          <span>Ngắm mưa sao & trái tim 💖</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=2.2"></script>
+</body>
+
+</html>

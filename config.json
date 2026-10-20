@@ -1,0 +1,39 @@
+{
+  "activeProfile": "mom",
+  "lastNgrokUrl": "https://astronaut-anchor-jackpot.ngrok-free.dev",
+  "profiles": {
+    "crush": {
+      "recipient": "Em Yêu ♥",
+      "subtitle": "Mỗi hạt sáng rơi xuống là một lời yêu thương gửi tới em",
+      "characters": "♥",
+      "letterTitle": "Gửi Em, Điều Tuyệt Vời Nhất! ✨",
+      "letterBody": "Cảm ơn vì đã xuất hiện và làm cho mỗi ngày trôi qua đều ngập tràn ấm áp và nụ cười. \nGiữa hàng tỉ người trên hành tinh này, được gặp và đồng hành cùng em là điều may mắn nhất.\n\nMong rằng trái tim nhỏ lấp lánh này sẽ mang lại cho em một ngày thật vui vẻ, bình yên và luôn nở nụ cười trên môi.\nYêu em nhiều hơn cả những vì sao trên bầu trời! 🌸💖",
+      "sender": "From Me With All My Heart ♥",
+      "theme": "rosePink",
+      "particleCount": 520,
+      "speed": 1
+    },
+    "mom": {
+      "recipient": "Mẹ hoa yêu quý hehe",
+      "subtitle": "Mỗi hạt sáng rơi xuống là lời chúc sức khỏe và bình an con gửi đến Má",
+      "characters": "♥",
+      "letterTitle": "Gửi Mẹ hoa yêu quý hehe! ✨",
+      "letterBody": "chúc má một ngày 20/10 vui vẻ mạnh khỏe và ngày càng xinh đẹp ạ,càng giàu nữa để trợ cấp con nhiều tiền :)",
+      "sender": "Lucas của má",
+      "theme": "goldenWarm",
+      "particleCount": 520,
+      "speed": 1
+    },
+    "sister": {
+      "recipient": "Cô Em Gái Nhỏ Bé 🎀",
+      "subtitle": "Chúc em gái luôn luôn rạng rỡ, xinh đẹp và học tập thật tốt",
+      "characters": "♥",
+      "letterTitle": "Gửi Cô Em Gái Đáng Yêu! 🎀",
+      "letterBody": "Chúc em gái nhỏ của anh/chị luôn luôn vui vẻ, học tập thật giỏi, ngày càng xinh đẹp và luôn giữ nụ cười rạng rỡ trên môi nhé!\n\nDù có bất cứ chuyện gì xảy ra thì anh/chị vẫn luôn ở bên ủng hộ em. Món quà trái tim nhỏ này gửi tặng riêng cho em đấy! 🌸✨",
+      "sender": "Anh/Chị Của Em ♥",
+      "theme": "violetSoft",
+      "particleCount": 520,
+      "speed": 1
+    }
+  }
+}

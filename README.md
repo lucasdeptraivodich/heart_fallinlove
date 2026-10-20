@@ -47,3 +47,50 @@ Mở trình duyệt:
 👉 **[http://localhost:3000](http://localhost:3000)** (Nhấn phím **`A`** để mở bảng chỉnh)
 hoặc:
 👉 **[http://localhost:3000/?admin](http://localhost:3000/?admin)**
+
+---
+
+## 🧩 1. Bức Tranh Toàn Cảnh: Web Hoạt Động Như Thế Nào?
+
+1. **Mặt tiền cửa hàng (`HTML + CSS + Canvas`):**
+   - Là thứ đập vào mắt người xem: Bầu trời sao rơi xuống, tụ lại thành hình trái tim 3D phát sáng, bức thư tình cảm mở ra khi bấm vào icon lá thư 💌.
+2. **Cuốn sổ ghi nhớ (`config.json`):**
+   - Lưu sẵn toàn bộ nội dung: Lời chúc Má 20/10 (*"Mẹ hoa yêu quý hehe"*), lời chúc Người yêu, lời chúc Em gái, màu vàng/hồng, chữ ký *"Lucas của má"*.
+3. **Người quản gia (`server.js`):**
+   - Chạy ngầm trên máy tính bạn (cổng 3000). Khi có ai gõ vào web, người quản gia sẽ mở cuốn sổ `config.json` ra và đưa đúng nội dung đó cho người xem.
+4. **Cây cầu ra Internet (`Ngrok`):**
+   - Máy tính của bạn bình thường người ngoài mạng không vào được (`localhost:3000` chỉ mình bạn thấy).
+   - Ngrok như một cây cầu nối máy tính bạn ra ngoài Internet, tạo thành link công khai (ví dụ: `https://astronaut-anchor-jackpot.ngrok-free.dev`) để Má hay Người yêu ở xa bấm vào điện thoại là xem được.
+
+---
+
+## 🛡️ 2. Tại Sao Chỉ Mình Bạn Chỉnh Được, Người Nhận KHÔNG THỂ Chỉnh?
+
+* **Khi bạn mở trên máy bạn (`localhost:3000`):** Web nhận diện bạn là **Admin/Chủ nhân** ➡️ Cho phép bạn bấm phím **`A`** để mở bảng cài đặt, chỉnh chữ, đổi màu, tăng giảm hạt tim.
+* **Khi Má hay Bạn gái mở link ngrok trên điện thoại:** Web nhận diện đây là **Khách nhận quà** ➡️ **Tự động giấu tiệt toàn bộ bảng cài đặt và khóa phím tắt**. Người nhận chỉ thấy trái tim lung linh và mở đọc thư, không tài nào chỉnh sửa hay phá giao diện được.
+
+---
+
+## 🔗 3. Tại Sao Lại Sinh Ra 3 Link `/me`, `/crush`, `/emgai`?
+
+Trước đây gửi link kèm câu chữ dài ngoằng (`?to=MeHoa&msg=Chuc...`), khi gửi qua Zalo / Messenger nó tự động cắt đứt chữ tiếng Việt có dấu khiến link bị lỗi hoặc nhảy về mặc định.
+
+**Bây giờ:**
+* Toàn bộ câu chúc của từng người đã được cất cố định trong file `config.json` trên máy bạn rồi.
+* Bạn chỉ việc gửi đường link siêu ngắn:
+  * 🌸 **Đuôi `/me`**: Web tự biết mở lời chúc của **Má**.
+  * 💖 **Đuôi `/crush`**: Web tự biết mở lời chúc của **Người yêu**.
+  * 🎀 **Đuôi `/emgai`**: Web tự biết mở lời chúc của **Em gái**.
+* Link ngắn như vậy thì Zalo/Messenger **không bao giờ bị cắt xén hay mất chữ nữa**!
+
+---
+
+## 🚀 4. Quy Trình Sử Dụng Thực Tế (3 Bước Cực Dễ)
+
+Mỗi khi bạn muốn gửi quà cho ai:
+1. **Bước 1:** Bật ngrok trong CMD (`ngrok http 3000`) để lấy link (ví dụ: `https://astronaut-anchor-jackpot.ngrok-free.dev`).
+2. **Bước 2:** Vào web `http://localhost:3000`, bấm phím **`A`** mở bảng cài đặt:
+   - Chỉnh sửa lời chúc nếu muốn.
+   - Dán link ngrok vào ô màu vàng (hệ thống sẽ tự động lưu vĩnh viễn vào máy).
+3. **Bước 3:** Nhìn xuống bên dưới, bấm nút **[Sao chép]** ở dòng **Gửi Má** (hoặc Crush/Em gái) rồi dán vào Zalo gửi đi là xong! Người nhận mở ra sẽ thấy chuẩn 100% như trên máy bạn!
+

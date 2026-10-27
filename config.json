@@ -1,5 +1,5 @@
 {
-  "activeProfile": "mom",
+  "activeProfile": "sister",
   "lastNgrokUrl": "https://astronaut-anchor-jackpot.ngrok-free.dev",
   "profiles": {
     "crush": {
@@ -15,7 +15,7 @@
     },
     "mom": {
       "recipient": "Mẹ hoa yêu quý hehe",
-      "subtitle": "Mỗi hạt sáng rơi xuống là lời chúc sức khỏe và bình an con gửi đến Má",
+      "subtitle": "Mỗi hạt sáng rơi xuống là lời chúc sức khỏe và bình an con gửi đến Má ♥",
       "characters": "♥",
       "letterTitle": "Gửi Mẹ hoa yêu quý hehe! ✨",
       "letterBody": "chúc má một ngày 20/10 vui vẻ mạnh khỏe và ngày càng xinh đẹp ạ,càng giàu nữa để trợ cấp con nhiều tiền :)",
@@ -25,14 +25,14 @@
       "speed": 1
     },
     "sister": {
-      "recipient": "Cô Em Gái Nhỏ Bé 🎀",
-      "subtitle": "Chúc em gái luôn luôn rạng rỡ, xinh đẹp và học tập thật tốt",
+      "recipient": "CHI NGU",
+      "subtitle": "NHỮNG CON CÁ SẼ PHẢI TRẢ GIÓ",
       "characters": "♥",
       "letterTitle": "Gửi Cô Em Gái Đáng Yêu! 🎀",
-      "letterBody": "Chúc em gái nhỏ của anh/chị luôn luôn vui vẻ, học tập thật giỏi, ngày càng xinh đẹp và luôn giữ nụ cười rạng rỡ trên môi nhé!\n\nDù có bất cứ chuyện gì xảy ra thì anh/chị vẫn luôn ở bên ủng hộ em. Món quà trái tim nhỏ này gửi tặng riêng cho em đấy! 🌸✨",
-      "sender": "Anh/Chị Của Em ♥",
+      "letterBody": "CHÚC CHI NGU NGÀY 20/10 VUI VẺ XINH ĐẸP VÀ NGHE LỜI BỐ MẸ VÀ CHĂM LÀM VIỆC NHÀ LÊN 😒",
+      "sender": "HOÀNG ANH ĐEP TRAI",
       "theme": "violetSoft",
-      "particleCount": 520,
+      "particleCount": 840,
       "speed": 1
     }
   }

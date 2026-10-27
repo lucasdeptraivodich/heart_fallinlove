@@ -94,3 +94,4 @@ Mỗi khi bạn muốn gửi quà cho ai:
    - Dán link ngrok vào ô màu vàng (hệ thống sẽ tự động lưu vĩnh viễn vào máy).
 3. **Bước 3:** Nhìn xuống bên dưới, bấm nút **[Sao chép]** ở dòng **Gửi Má** (hoặc Crush/Em gái) rồi dán vào Zalo gửi đi là xong! Người nhận mở ra sẽ thấy chuẩn 100% như trên máy bạn!
 
+LƯU Ý:PHẢI CHẠY LỆNH NODE SERVER.JS TRONG TERMINAL
